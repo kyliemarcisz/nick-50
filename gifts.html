@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Kylie & Blake · Nick at Fifty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F2E8;
+      --navy: #0B1526;
+      --gold: #B8832E;
+      --gold-light: #D4A24E;
+      --text: #1C1610;
+      --muted: #7A6E5E;
+      --cream-border: #E2D9C8;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade { opacity: 0; animation: fadeUp 0.9s ease forwards; }
+    .d1 { animation-delay: 0.1s; }
+    .d2 { animation-delay: 0.3s; }
+    .d3 { animation-delay: 0.55s; }
+    .d4 { animation-delay: 0.8s; }
+    .d5 { animation-delay: 1.05s; }
+    .d6 { animation-delay: 1.3s; }
+    .d7 { animation-delay: 1.55s; }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 72px 24px 56px;
+      border-bottom: 1px solid var(--cream-border);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 7vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    h1 em { font-style: italic; color: var(--gold-light); }
+
+    .header-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--muted);
+    }
+
+    /* ── GIFTS GRID ── */
+    .gifts-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .gifts-section { grid-template-columns: 1fr; }
+    }
+
+    .gift-card {
+      background: white;
+      border: 1px solid var(--cream-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .gift-card-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-color: #EDE6D6;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    .gift-card-photo span {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(180,150,90,0.5);
+    }
+
+    .gift-card-body {
+      padding: 28px 28px 32px;
+    }
+
+    .gift-from {
+      font-family: var(--sans);
+      font-size: 0.63rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .gift-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .gift-title em { font-style: italic; }
+
+    .rule-small {
+      width: 32px; height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      margin-bottom: 18px;
+    }
+
+    .gift-message {
+      font-family: var(--sans);
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── TEASER ── */
+    .teaser {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+      text-align: center;
+    }
+
+    .teaser-rule {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      margin: 0 auto 32px;
+    }
+
+    .teaser-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.64rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .teaser h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .teaser h2 em { font-style: italic; }
+
+    .teaser p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    /* ── NAV ── */
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 24px 80px;
+    }
+
+    .nav-back {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      background: var(--navy);
+      border-radius: 100px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #F5EFE0;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-btn:hover { background: #1a2d4a; transform: translateY(-1px); }
+    .nav-btn .arrow { font-size: 1.1em; transition: transform 0.2s; }
+    .nav-btn:hover .arrow { transform: translateX(4px); }
+
+    .page-indicator {
+      position: fixed; bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 10;
+    }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(180,130,46,0.25); }
+    .dot.active { background: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <p class="eyebrow fade d1">For Nick · His 50th</p>
+    <h1 class="fade d2">From the people who<br><em>love you most.</em></h1>
+    <p class="header-sub fade d3">A few things from Kylie and Blake.</p>
+  </div>
+
+  <div class="gifts-section">
+
+    <!-- ── KYLIE'S GIFT ── -->
+    <div class="gift-card fade d3">
+      <!-- PHOTO: Replace url('') with your photo, e.g. url('kylie-nick.jpg') -->
+      <div class="gift-card-photo" style="background-image: url('')">
+        <span>add photo of you & nick</span>
+      </div>
+      <div class="gift-card-body">
+        <p class="gift-from">From Kylie</p>
+        <!-- EDIT: Replace with the name of your gift -->
+        <h2 class="gift-title"><em>[ Your gift title ]</em></h2>
+        <div class="rule-small"></div>
+        <!-- EDIT: Replace with your message to Nick -->
+        <p class="gift-message">
+          Dad, there's no one quite like you. You have this rare ability to make everyone around you feel seen, loved, and like they're the most important person in the room — and you've done that for me my whole life.<br><br>
+          I love you to the moon and back. Happy 50th. You deserve every single thing.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── BLAKE'S GIFT ── -->
+    <div class="gift-card fade d4">
+      <!-- PHOTO: Replace url('') with a photo of Blake & Nick -->
+      <div class="gift-card-photo" style="background-image: url('')">
+        <span>add photo of blake & nick</span>
+      </div>
+      <div class="gift-card-body">
+        <p class="gift-from">From Blake</p>
+        <!-- EDIT: Replace with Blake's gift title -->
+        <h2 class="gift-title"><em>[ Blake's gift title ]</em></h2>
+        <div class="rule-small"></div>
+        <!-- EDIT: Replace with Blake's message -->
+        <p class="gift-message">
+          [ Blake's message to Nick — add it here. ]
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TEASER FOR THE BIG GIFT ── -->
+  <div class="teaser fade d5">
+    <div class="teaser-rule"></div>
+    <p class="teaser-eyebrow">But wait —</p>
+    <h2>There's one <em>more</em> thing.</h2>
+    <p>From all of us. The one we've been planning for months. The gift that comes with boarding passes, fine dining reservations, and the Atlantic Ocean.</p>
+  </div>
+
+  <div class="nav-row fade d6">
+    <a href="index.html" class="nav-back">← Back</a>
+    <a href="portugal.html" class="nav-btn">
+      Your biggest gift yet <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="page-indicator">
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+  </div>
+
+</body>
+</html>
