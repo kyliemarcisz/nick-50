@@ -4,266 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nick at Fifty</title>
+  <meta name="theme-color" content="#FFB612">
+  <meta name="description" content="Celebrating Nick's 50th birthday — from the people who love him most.">
+
+  <!-- Open Graph — controls preview in iMessage, WhatsApp, Slack -->
+  <meta property="og:title"       content="Nick at Fifty 🎉">
+  <meta property="og:description" content="Fifty years of being extraordinary. From Kylie & Blake.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://nick-50.pages.dev/">
+  <!-- Replace with an actual photo for the link preview -->
+  <meta property="og:image"       content="https://nick-50.pages.dev/images/og-cover.jpg">
+
+  <!-- Fonts — preconnect first, then load with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Oswald:wght@400;600&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 
-    :root {
-      --navy: #0B1526;
-      --navy-mid: #142238;
-      --gold: #C9944A;
-      --gold-light: #E0B870;
-      --cream: #F5EFE0;
-      --cream-dim: rgba(245,239,224,0.55);
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--navy);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-weight: 300;
-      min-height: 100vh;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade { opacity: 0; animation: fadeUp 1s ease forwards; }
-    .d1  { animation-delay: 0.1s; }
-    .d2  { animation-delay: 0.35s; }
-    .d3  { animation-delay: 0.6s; }
-    .d4  { animation-delay: 0.85s; }
-    .d5  { animation-delay: 1.1s; }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-number {
-      font-family: var(--serif);
-      font-size: clamp(140px, 30vw, 280px);
-      font-weight: 700;
-      color: rgba(201,148,74,0.07);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      letter-spacing: -0.05em;
-      user-select: none;
-      line-height: 1;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-
-    .hero-name {
-      font-family: var(--serif);
-      font-size: clamp(52px, 10vw, 100px);
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .hero-name em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .hero-tagline {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(18px, 3vw, 26px);
-      color: var(--cream-dim);
-      margin-bottom: 56px;
-      font-weight: 400;
-    }
-
-    /* ── PHOTOS ── */
-    .photos-hero {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr 1fr;
-      gap: 12px;
-      width: 100%;
-      max-width: 860px;
-      margin-bottom: 56px;
-    }
-
-    .photo {
-      background-size: cover;
-      background-position: center;
-      background-color: var(--navy-mid);
-      border: 1px solid rgba(201,148,74,0.15);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .photo:nth-child(1) { aspect-ratio: 3/4; border-radius: 120px 120px 8px 8px; }
-    .photo:nth-child(2) { aspect-ratio: 3/4; border-radius: 8px; transform: translateY(-20px); }
-    .photo:nth-child(3) { aspect-ratio: 3/4; border-radius: 120px 120px 8px 8px; }
-
-    .photo-label {
-      font-family: var(--sans);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(201,148,74,0.35);
-      padding: 8px 12px;
-      border-top: 1px dashed rgba(201,148,74,0.12);
-      width: 100%;
-      text-align: center;
-      background: rgba(11,21,38,0.6);
-    }
-
-    /* ── BODY TEXT ── */
-    .tribute {
-      max-width: 580px;
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .tribute p {
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 1.8;
-      color: var(--cream-dim);
-    }
-
-    .tribute p + p { margin-top: 16px; }
-
-    /* ── DIVIDER ── */
-    .rule {
-      width: 48px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
-      margin: 0 auto 36px;
-    }
-
-    /* ── NAV ── */
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 36px;
-      border: 1px solid rgba(201,148,74,0.35);
-      border-radius: 100px;
-      font-family: var(--sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--cream);
-      text-decoration: none;
-      transition: background 0.25s, border-color 0.25s, color 0.25s;
-    }
-
-    .nav-btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy);
-    }
-
-    .nav-btn .arrow { font-size: 1.1em; transition: transform 0.2s; }
-    .nav-btn:hover .arrow { transform: translateX(4px); }
-
-    /* ── PAGE INDICATOR ── */
-    .page-indicator {
-      position: fixed;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: rgba(201,148,74,0.3);
-    }
-    .dot.active { background: var(--gold); }
-
-    @media (max-width: 640px) {
-      .photos-hero { grid-template-columns: 1fr 1fr; }
-      .photos-hero .photo:nth-child(3) { display: none; }
-      .photo:nth-child(2) { transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body data-page="home">
 
-  <section class="hero">
-    <div class="hero-number" aria-hidden="true">50</div>
+  <!-- Transition overlay — visible only in browsers without @view-transition support -->
+  <div id="page-overlay" class="page-overlay" aria-hidden="true"></div>
 
-    <p class="hero-eyebrow fade d1">April 2026 &nbsp;·&nbsp; A Half Century</p>
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Nick's 50th birthday hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
-    <h1 class="hero-name fade d2">Nick</h1>
-    <p class="hero-name fade d2" style="font-size: clamp(28px,5vw,52px); margin-bottom: 18px;">
-      <em>at fifty.</em>
-    </p>
+    <p class="hero-bg-number" aria-hidden="true">50</p>
 
-    <p class="hero-tagline fade d3">A celebration fifty years in the making.</p>
+    <div class="hero-content">
+      <p class="hero-sub reveal" data-delay="0">April 2026 &nbsp;·&nbsp; A Half Century</p>
+      <h1 class="hero-name reveal" data-delay="120">NICK</h1>
+      <p class="hero-tagline reveal" data-delay="260">The Man. The Myth.<br>The Legend.</p>
+    </div>
+  </section>
 
-    <div class="photos-hero fade d3">
-      <!-- PHOTO 1: Replace src below with your image path, e.g. "nick1.jpg" -->
-      <div class="photo" style="background-image: url('')">
-        <span class="photo-label">add photo of nick</span>
+  <!-- ── MARQUEE ── -->
+  <!-- Pure CSS infinite loop. Two identical spans so translateX(-50%) = one span width. -->
+  <div class="marquee-strip" aria-label="Nick's passions" role="marquee">
+    <div class="marquee-inner" aria-hidden="true">
+      <span>🏈 STEELERS &nbsp;·&nbsp; ⚾ BASEBALL &nbsp;·&nbsp; 🏋️ CROSSFIT &nbsp;·&nbsp; 🎿 SKIING &nbsp;·&nbsp; 🥾 HIKING &nbsp;·&nbsp; 💡 TECH INNOVATOR &nbsp;·&nbsp; 🔥 BBQ CHIPS &nbsp;·&nbsp; 🥐 CINNAMON ROLLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>🏈 STEELERS &nbsp;·&nbsp; ⚾ BASEBALL &nbsp;·&nbsp; 🏋️ CROSSFIT &nbsp;·&nbsp; 🎿 SKIING &nbsp;·&nbsp; 🥾 HIKING &nbsp;·&nbsp; 💡 TECH INNOVATOR &nbsp;·&nbsp; 🔥 BBQ CHIPS &nbsp;·&nbsp; 🥐 CINNAMON ROLLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ── PHOTO GRID ── -->
+  <section class="photo-section">
+    <div class="photo-grid">
+      <!-- HERO PHOTO: Replace src with your image path, e.g. "images/nick-hero.jpg" -->
+      <div class="photo-slot photo-hero reveal" data-delay="0" data-label="add hero photo of nick">
+        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/4">
       </div>
 
-      <!-- PHOTO 2: Main/favourite photo — taller, centre stage -->
-      <div class="photo" style="background-image: url('')">
-        <span class="photo-label">add photo of nick</span>
+      <!-- PHOTO 2 -->
+      <div class="photo-slot photo-sm-1 reveal" data-delay="100" data-label="add photo of nick">
+        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
       </div>
 
       <!-- PHOTO 3 -->
-      <div class="photo" style="background-image: url('')">
-        <span class="photo-label">add photo of nick</span>
+      <div class="photo-slot photo-sm-2 reveal" data-delay="200" data-label="add photo of nick">
+        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+      </div>
+
+      <!-- WIDE PHOTO: group shot, vacation, etc. -->
+      <div class="photo-slot photo-wide reveal" data-delay="100" data-label="add wide photo">
+        <img src="" alt="Nick with family" loading="lazy" decoding="async" style="aspect-ratio:16/6">
       </div>
     </div>
+  </section>
 
-    <div class="tribute fade d4">
-      <div class="rule"></div>
-      <!-- EDIT: Replace with your own words about Nick -->
-      <p>Fifty years of showing up — as a father, a friend, and the kind of man people want to be around. The one who always knew what to say, when to say nothing, and when to just open the good wine.</p>
-      <p>Today we celebrate you, Nick. Everything that you are, everything you've built, and everything still to come.</p>
+  <!-- ── COPY BLOCK ── -->
+  <section class="copy-block" aria-label="Tribute to Nick">
+    <p class="line reveal" data-delay="0">Father.</p>
+    <p class="line line-gold reveal" data-delay="80">Innovator.</p>
+    <p class="line reveal" data-delay="160">Athlete.</p>
+    <p class="line line-gold reveal" data-delay="240">Legend.</p>
+    <p class="line line-muted reveal" data-delay="360" style="font-size: clamp(1.2rem, 4vw, 2.5rem); margin-top: 1.5rem;">
+      The man who makes everything better.
+    </p>
+  </section>
+
+  <!-- ── STATS STRIP ── -->
+  <div class="stats-strip" role="list">
+    <div class="stat reveal" data-delay="0" role="listitem">
+      <span class="stat-number">50</span>
+      <span class="stat-label">Years of Being Extraordinary</span>
     </div>
+    <div class="stat reveal" data-delay="120" role="listitem">
+      <span class="stat-number">2</span>
+      <span class="stat-label">Kids Who Adore You</span>
+    </div>
+    <div class="stat reveal" data-delay="240" role="listitem">
+      <span class="stat-number">1</span>
+      <span class="stat-label">Family Trip to Portugal</span>
+    </div>
+  </div>
 
-    <a href="gifts.html" class="nav-btn fade d5">
-      Open your gifts <span class="arrow">→</span>
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <a href="family.html" class="cta-btn reveal" data-delay="0" aria-label="See what the family got you">
+      See What The Family Got You <span class="arrow" aria-hidden="true">→</span>
     </a>
   </section>
 
-  <div class="page-indicator">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-
+  <script src="js/main.js" defer></script>
 </body>
 </html>

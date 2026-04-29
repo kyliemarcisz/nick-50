@@ -4,888 +4,531 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portugal · Nick at Fifty</title>
+  <meta name="theme-color" content="#C1622F">
+  <meta name="description" content="Nick's 50th birthday gift — a family trip to Lisbon and Madeira, Portugal.">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Portugal · Nick at Fifty 🇵🇹">
+  <meta property="og:description" content="Lisbon. Madeira. Your family. Your 50th.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://nick-50.pages.dev/portugal.html">
+  <meta property="og:image"       content="https://nick-50.pages.dev/images/og-portugal.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Oswald:wght@400;600&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 
-    :root {
-      --cream: #F7F1E6;
-      --navy: #0D1B2E;
-      --terra: #C05533;
-      --gold: #B8832E;
-      --gold-light: #D4A24E;
-      --text: #1A140E;
-      --muted: #7A6554;
-      --border: #E0D5C4;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      min-height: 100vh;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade { opacity: 0; animation: fadeUp 1s ease forwards; }
-    .d1 { animation-delay: 0.1s; }
-    .d2 { animation-delay: 0.4s; }
-    .d3 { animation-delay: 0.7s; }
-    .d4 { animation-delay: 1.0s; }
-
-    /* ── REVEAL HERO ── */
-    .reveal-hero {
-      background: var(--navy);
-      color: #F5EFE0;
-      text-align: center;
-      padding: 100px 24px 90px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .reveal-bg-text {
-      font-family: var(--serif);
-      font-size: clamp(90px, 22vw, 220px);
-      font-weight: 700;
-      color: rgba(184,131,46,0.06);
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: -0.03em;
-    }
-
-    .reveal-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-    }
-
-    .reveal-title {
-      font-family: var(--serif);
-      font-size: clamp(52px, 11vw, 110px);
-      font-weight: 400;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-
-    .reveal-title em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .reveal-sub {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(18px, 3vw, 26px);
-      color: rgba(245,239,224,0.6);
-      margin-bottom: 44px;
-    }
-
-    .reveal-intro {
-      max-width: 540px;
-      margin: 0 auto 16px;
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 1.8;
-      color: rgba(245,239,224,0.7);
-    }
-
-    /* ── SECTION LAYOUT ── */
-    .section {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 72px 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section:last-of-type { border-bottom: none; }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-
-    .section-number {
-      font-family: var(--serif);
-      font-size: clamp(56px, 10vw, 96px);
-      font-weight: 700;
-      color: rgba(184,131,46,0.12);
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .section-titles { flex: 1; }
-
-    .section-eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .section-city {
-      font-family: var(--serif);
-      font-size: clamp(36px, 7vw, 64px);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
-
-    .section-city em { font-style: italic; }
-
-    .section-desc {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
-    /* ── SUBSECTIONS ── */
-    .subsection { margin-bottom: 44px; }
-
-    .subsection-title {
-      font-size: 0.62rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--terra);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ── CARDS ── */
-    .cards { display: flex; flex-direction: column; gap: 16px; }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 22px 24px 24px;
-    }
-
-    .card-name {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 400;
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
-
-    .card-name em { font-style: italic; }
-
-    .card-tag {
-      display: inline-block;
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 2px;
-      margin-bottom: 10px;
-      font-weight: 400;
-    }
-
-    .tag-star { background: rgba(184,131,46,0.1); color: var(--gold); }
-    .tag-pick { background: rgba(192,85,51,0.08); color: var(--terra); }
-    .tag-local { background: rgba(13,27,46,0.07); color: var(--navy); }
-    .tag-iconic { background: rgba(184,131,46,0.15); color: #8A6020; }
-
-    .card-body {
-      font-size: 0.88rem;
-      line-height: 1.72;
-      color: var(--muted);
-    }
-
-    /* ── EXPERIENCE LIST ── */
-    .exp-list { display: flex; flex-direction: column; gap: 18px; }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 32px 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    .exp-num {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-style: italic;
-      color: rgba(184,131,46,0.4);
-      padding-top: 1px;
-    }
-
-    .exp-content {}
-
-    .exp-title {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 400;
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
-
-    .exp-body {
-      font-size: 0.86rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    /* ── FOOD GRID ── */
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-    }
-
-    .food-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 18px 20px;
-    }
-
-    .food-name {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-
-    .food-name em { font-style: italic; }
-
-    .food-desc {
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-
-    /* ── ITINERARY ── */
-    .itinerary { display: flex; flex-direction: column; gap: 0; }
-
-    .itin-day {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 20px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .itin-day:last-child { border-bottom: none; }
-
-    .itin-label {
-      font-family: var(--sans);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      padding-top: 3px;
-    }
-
-    .itin-text {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .itin-text strong {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
-      display: block;
-      margin-bottom: 2px;
-      letter-spacing: -0.01em;
-    }
-
-    /* ── CLOSING ── */
-    .closing {
-      background: var(--navy);
-      color: #F5EFE0;
-      text-align: center;
-      padding: 100px 24px;
-    }
-
-    .closing-rule {
-      width: 48px; height: 1px;
-      background: var(--gold);
-      margin: 0 auto 36px;
-      opacity: 0.5;
-    }
-
-    .closing h2 {
-      font-family: var(--serif);
-      font-size: clamp(32px, 6vw, 58px);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-
-    .closing h2 em { font-style: italic; color: var(--gold-light); }
-
-    .closing p {
-      max-width: 520px;
-      margin: 0 auto 48px;
-      font-size: clamp(15px, 2vw, 17px);
-      line-height: 1.85;
-      color: rgba(245,239,224,0.65);
-    }
-
-    .closing-sig {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--gold-light);
-    }
-
-    /* ── BACK NAV ── */
-    .nav-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      padding: 48px 24px 32px;
-      background: var(--navy);
-    }
-
-    .nav-back {
-      font-family: var(--sans);
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(245,239,224,0.4);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: rgba(245,239,224,0.8); }
-
-    /* ── PAGE INDICATOR ── */
-    .page-indicator {
-      position: fixed; bottom: 28px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; gap: 8px; z-index: 10;
-    }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(184,131,46,0.25); }
-    .dot.active { background: var(--gold); }
-
-    @media (max-width: 640px) {
-      .section-header { flex-direction: column; gap: 4px; }
-      .section-number { font-size: 48px; }
-      .food-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<!-- data-theme="portugal" flips the entire CSS custom property palette -->
+<body data-theme="portugal" data-page="portugal">
 
-  <!-- ── REVEAL HERO ── -->
-  <div class="reveal-hero">
-    <div class="reveal-bg-text" aria-hidden="true">Portugal</div>
-    <p class="reveal-eyebrow fade d1">Your 50th Birthday Gift</p>
-    <h1 class="reveal-title fade d2">You're going to<br><em>Portugal.</em></h1>
-    <p class="reveal-sub fade d3">Lisbon &amp; Madeira · A family adventure</p>
-    <p class="reveal-intro fade d4">
-      Nick — you've spent fifty years giving us everything. This is our turn. We're sending you (and the whole family) to one of the most beautiful countries on earth. Ten days. Two cities. The Atlantic. The very best food and wine on the planet. And memories that will outlast all of us.
+  <div id="page-overlay" class="page-overlay" aria-hidden="true"></div>
+
+  <nav class="page-nav">
+    <a href="family.html" class="back-link" aria-label="Back to gifts page">← Back</a>
+  </nav>
+
+  <!-- ── HERO — clip-path wipe reveal triggered by JS on load ── -->
+  <section class="pt-hero" aria-label="Portugal reveal hero">
+    <p class="pt-hero-sub reveal" data-delay="0">Your 50th Birthday Gift</p>
+
+    <!-- .clip-reveal — JS adds .is-revealed on load → CSS animates clip-path -->
+    <h1 class="pt-hero-title clip-reveal" aria-label="Portugal">PORTUGAL</h1>
+
+    <p class="pt-hero-sub reveal" data-delay="200" style="margin-top: 0.5rem;">
+      Lisbon &nbsp;·&nbsp; Madeira &nbsp;·&nbsp; Your Family &nbsp;·&nbsp; Your 50th
     </p>
-  </div>
 
-  <!-- ════════════════════════════════════════════
-       ACT I · LISBON
-       ════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-number" aria-hidden="true">I</div>
-      <div class="section-titles">
-        <p class="section-eyebrow">Days 1 – 5</p>
-        <h2 class="section-city">Lisbon</h2>
+    <p class="pt-hero-intro reveal" data-delay="360">
+      Pack your bags, Dad — we're taking you on the adventure of a lifetime.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER I — LISBON
+  ═══════════════════════════════════════ -->
+  <article class="chapter">
+    <header class="chapter-header reveal" data-delay="0">
+      <span class="chapter-num" aria-hidden="true">I</span>
+      <div>
+        <p class="chapter-eyebrow">Days 1 – 5</p>
+        <h2 class="chapter-city">Lisbon</h2>
       </div>
-    </div>
+    </header>
 
-    <p class="section-desc">
-      Portugal's capital sits on seven hills above the Tagus, tiled in blue azulejos and lit in that particular golden Atlantic light. It is one of Europe's oldest cities and one of its most alive. Five days here will barely scratch the surface — and you'll never want to leave.
+    <p class="chapter-desc reveal" data-delay="100">
+      Portugal's capital sits on seven hills above the Tagus, tiled in blue azulejos and lit in that particular golden Atlantic light. It's one of Europe's oldest cities and one of its most alive. Five days here will barely scratch the surface — and you'll never want to leave.
     </p>
 
     <!-- WHERE TO STAY -->
-    <div class="subsection">
-      <p class="subsection-title">Where to Stay</p>
-      <div class="cards">
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🏨 Where to Stay</p>
+      <div class="rec-list">
 
-        <div class="card">
-          <p class="card-name"><em>Bairro Alto Hotel</em></p>
-          <span class="card-tag tag-pick">Our top pick</span>
-          <p class="card-body">The finest boutique hotel in Lisbon, sitting at the edge of the bohemian Chiado neighbourhood. Rooftop bar with views across the rooftops to the Tagus. Portuguese contemporary art throughout. The service is exceptional — they remember your name after the first morning. From €350/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Bairro Alto Hotel</p>
+          <span class="rec-tag tag-pick">Our top pick</span>
+          <p class="rec-body">The finest boutique hotel in Lisbon, sitting at the edge of the bohemian Chiado neighbourhood. Rooftop bar overlooking the city, Portuguese contemporary art throughout, and service that remembers your name after the first morning. From €350/night.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Memmo Alfama</em></p>
-          <span class="card-tag tag-local">Neighbourhood gem</span>
-          <p class="card-body">Carved into the hillside of the ancient Alfama district, with a terrace and infinity pool hanging over the river. More intimate and slightly more affordable than Bairro Alto. Wake up to the view that Lisboetas have painted for centuries. From €220/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Memmo Alfama</p>
+          <span class="rec-tag tag-local">Neighbourhood gem</span>
+          <p class="rec-body">Carved into the hillside of the ancient Alfama district, with a terrace and infinity pool hanging over the Tagus. More intimate than Bairro Alto. Wake up to the view that Lisboetas have painted for centuries. From €220/night.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Verride Palácio Santa Catarina</em></p>
-          <span class="card-tag tag-iconic">Iconic</span>
-          <p class="card-body">Only 19 suites inside an 18th-century palace on the Chiado hillside. Sweeping Tagus views, gardens, an air of total discretion. If you want to feel like a Portuguese nobleman celebrating his birthday — this is the one. From €480/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Tivoli Avenida Liberdade</p>
+          <span class="rec-tag tag-iconic">Grand boulevard classic</span>
+          <p class="rec-body">A grand 5-star on Lisbon's finest boulevard, the Champs-Élysées of Portugal. Rooftop pool with views across the whole city. If you want the classical Lisbon grand-hotel experience — this is it. From €280/night.</p>
         </div>
 
       </div>
     </div>
 
     <!-- WHERE TO EAT -->
-    <div class="subsection">
-      <p class="subsection-title">Where to Eat</p>
-      <div class="cards">
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🍽 Where to Eat</p>
+      <div class="rec-list">
 
-        <div class="card">
-          <p class="card-name"><em>Belcanto</em></p>
-          <span class="card-tag tag-star">✦ 2 Michelin Stars</span>
-          <p class="card-body">Chef José Avillez is Portugal's most celebrated cook — and Belcanto in Chiado is his masterpiece. A 10-course tasting menu through the history and landscape of Portugal. Delicate, astonishing, unforgettable. Book months in advance and save it for a special dinner. Nick, this one is for you.</p>
+        <div class="rec-card">
+          <p class="rec-name">Belcanto</p>
+          <span class="rec-tag tag-star">✦ 2 Michelin Stars</span>
+          <p class="rec-body">Chef José Avillez is Portugal's most celebrated cook, and Belcanto in Chiado is his masterpiece. A 10-course tasting menu through the history and landscape of Portugal. Book months in advance and save it for your best night. Nick — this one is for you.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Alma</em></p>
-          <span class="card-tag tag-star">✦ 1 Michelin Star</span>
-          <p class="card-body">Chef Henrique Sá Pessoa's jewel, set inside a 17th-century building in Chiado. Sophisticated without being stiff. The tasting menu marries modern technique with honest Portuguese ingredients — aged cheeses, sea urchin, bacalhau transformed into something ethereal.</p>
+        <div class="rec-card">
+          <p class="rec-name">Cura — Four Seasons Ritz Lisbon</p>
+          <span class="rec-tag tag-star">✦ 1 Michelin Star</span>
+          <p class="rec-body">Chef Pedro Pena Bastos in the iconic Ritz. Elegant, unhurried, flawlessly executed. The tasting menu is a portrait of modern Portugal — extraordinary Portuguese wine pairing available. A serious dinner.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Cervejaria Ramiro</em></p>
-          <span class="card-tag tag-pick">Must go — no exceptions</span>
-          <p class="card-body">Not Michelin-starred, but arguably the most important meal you'll eat in Portugal. Since 1956, Ramiro has served the finest Atlantic seafood in a bustling, old-school dining room. Queue before it opens. Order the garlic butter prawns, the percebes (gooseneck barnacles — look strange, taste like the ocean itself), the clams in white wine, and finish with a prego (steak sandwich). Then do it again the next night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Cervejaria Ramiro</p>
+          <span class="rec-tag tag-pick">Non-negotiable</span>
+          <p class="rec-body">Since 1956, the temple of Lisbon seafood. Queue before it opens. Order the garlic butter prawns, the percebes (gooseneck barnacles — strange-looking, tasting exactly like the ocean), the clams in white wine, and finish with a prego steak sandwich. Then consider returning tomorrow.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Tasca do Chico</em></p>
-          <span class="card-tag tag-local">30 seats · Live fado nightly</span>
-          <p class="card-body">Thirty seats, a kitchen the size of a wardrobe, and the best fado dining room in Lisbon. Petiscos (Portuguese tapas), house wine, and musicians who will make the hairs on the back of your neck stand up. Book weeks ahead. This is the Lisbon you came for.</p>
+        <div class="rec-card">
+          <p class="rec-name">Tasca do Chico</p>
+          <span class="rec-tag tag-local">30 seats · Live fado nightly</span>
+          <p class="rec-body">Thirty seats, a kitchen the size of a wardrobe, and the best fado dining room in Lisbon. Honest petiscos, house wine, and musicians who will make the hairs on the back of your neck stand up. Book weeks ahead. This is the Lisbon you came for.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Solar dos Presuntos</em></p>
-          <span class="card-tag tag-local">Institution since 1976</span>
-          <p class="card-body">A Lisbon institution run by the same family for nearly fifty years. Northern Portuguese cuisine: the presunto ham is world-class, the bacalhau with cream is perfect, and the wine list reads like a love letter to the Douro Valley. Warm, generous, quintessentially Portuguese.</p>
+        <div class="rec-card">
+          <p class="rec-name">Pastéis de Belém</p>
+          <span class="rec-tag tag-iconic">Since 1837</span>
+          <p class="rec-body">Not a restaurant — a pilgrimage. The original pastel de nata, made from a recipe kept secret since 1837. Eat them warm from the oven, dusted with cinnamon, next to a bica (espresso). The single most important food experience in Portugal.</p>
         </div>
 
       </div>
     </div>
 
     <!-- EXPERIENCES -->
-    <div class="subsection">
-      <p class="subsection-title">What to Do</p>
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🗺 What to Do</p>
       <div class="exp-list">
 
         <div class="exp-item">
-          <span class="exp-num">1</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">1</span>
+          <div>
             <p class="exp-title">Morning in Alfama</p>
-            <p class="exp-body">Lisbon's oldest quarter, built by the Moors a thousand years ago. Wander before the tourists arrive — cobblestones, laundry drying between balconies, cats, a bakery at every corner. Climb to São Jorge Castle for the view. This is the city's soul.</p>
+            <p class="exp-body">Lisbon's oldest quarter, built by the Moors a thousand years ago. Arrive before 9am — cobblestones, laundry drying between balconies, cats, a bakery at every corner. Climb to São Jorge Castle for the view across the city and the Tagus.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">2</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">2</span>
+          <div>
             <p class="exp-title">A Day in Belém</p>
-            <p class="exp-body">The historical grand quarter along the river. Jerónimos Monastery (UNESCO, breathtaking). Torre de Belém. And — non-negotiable — eat a pastel de nata at Pastéis de Belém, where the recipe has been kept secret since 1837. Warm, dusted with cinnamon, next to a bica (espresso). One of the great breakfasts of the world.</p>
+            <p class="exp-body">The grand historical quarter along the river. Jerónimos Monastery (UNESCO, breathtaking). Torre de Belém. The Monument to the Discoveries. Then pastéis de nata next door — eat two, then eat another.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">3</span>
-          <div class="exp-content">
-            <p class="exp-title">A Day Trip to Sintra</p>
-            <p class="exp-body">40 minutes from Lisbon by train. One of the most magical places in Europe — a forested mountain studded with 19th-century Romantic palaces. Pena Palace (painted in deep yellow and terracotta, perched above the clouds). Quinta da Regaleira, with its spiral initiation well descending into the earth. A different world entirely.</p>
+          <span class="exp-num" aria-hidden="true">3</span>
+          <div>
+            <p class="exp-title">Day Trip to Sintra</p>
+            <p class="exp-body">40 minutes by train. One of the most magical places in Europe — a forested mountain studded with 19th-century Romantic palaces. Pena Palace perched above the clouds. Quinta da Regaleira with its spiral initiation well descending underground. A completely different world.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">4</span>
-          <div class="exp-content">
-            <p class="exp-title">An Evening of Live Fado</p>
+          <span class="exp-num" aria-hidden="true">4</span>
+          <div>
+            <p class="exp-title">Live Fado Evening</p>
             <p class="exp-body">Fado is Lisbon's music — mournful, beautiful, born in the Alfama. Book a table at Tasca do Chico or Sr. Vinho for dinner with live performance. The singers are extraordinary. The emotion is untranslatable. This is something you carry home.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">5</span>
-          <div class="exp-content">
-            <p class="exp-title">Sunset from the Miradouros</p>
-            <p class="exp-body">Lisbon is a city of viewpoints. Miradouro da Graça (the locals' favourite, never overrun). Miradouro de Santa Catarina. São Pedro de Alcântara. Each looks out over a different sea of terracotta rooftops as the light goes gold. Bring ginjinha (cherry liqueur) in your pocket.</p>
+          <span class="exp-num" aria-hidden="true">5</span>
+          <div>
+            <p class="exp-title">Westernmost European Vineyard</p>
+            <p class="exp-body">Adega de Colares — one of the few surviving wine estates near the Atlantic, growing ungrafted vines in sand. A completely unique Portuguese wine style. Worth a half-day trip to Sintra/Cascais combined with the coast.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">6</span>
-          <div class="exp-content">
-            <p class="exp-title">Time Out Market</p>
-            <p class="exp-body">A beautiful 19th-century iron market hall transformed into a curated food market. All of Lisbon's best chefs have stalls — oysters, bacalhau, pastéis, craft beer, wine. Perfect for Saturday lunch. You can eat your way through the country in two hours.</p>
+          <span class="exp-num" aria-hidden="true">6</span>
+          <div>
+            <p class="exp-title">Private Alfama & Belém Guided Tour</p>
+            <p class="exp-body">Book a private guide for your first full day. The context transforms everything — the history of the Moorish quarter, the meaning of the Manueline architecture in Belém, the story of the Age of Discoveries. You'll spend the rest of the trip noticing things you'd have walked past.</p>
           </div>
         </div>
 
       </div>
     </div>
-  </section>
+  </article>
 
-  <!-- ════════════════════════════════════════════
-       ACT II · MADEIRA
-       ════════════════════════════════════════════ -->
-  <section class="section" style="background: #F0EAD8;">
-    <div class="section-header">
-      <div class="section-number" aria-hidden="true">II</div>
-      <div class="section-titles">
-        <p class="section-eyebrow">Days 6 – 10 · 1h10min flight from Lisbon</p>
-        <h2 class="section-city"><em>Madeira</em></h2>
+  <!-- ═══════════════════════════════════════
+       CHAPTER II — MADEIRA
+  ═══════════════════════════════════════ -->
+  <article class="chapter" style="background: rgba(0,0,0,0.025);">
+    <header class="chapter-header reveal" data-delay="0">
+      <span class="chapter-num" aria-hidden="true">II</span>
+      <div>
+        <p class="chapter-eyebrow">Days 6 – 10 &nbsp;·&nbsp; 1h10min flight from Lisbon</p>
+        <h2 class="chapter-city">Madeira</h2>
       </div>
-    </div>
+    </header>
 
-    <p class="section-desc">
-      A volcanic island in the middle of the Atlantic — dramatic cliffs, ancient laurel forest, flowers everywhere, and the most extraordinary wine in the world. Madeira is what happens when you fly an hour southwest from Lisbon and land somewhere that feels completely unlike anywhere else on earth. Subtropical, wild, improbably beautiful.
+    <p class="chapter-desc reveal" data-delay="100">
+      A volcanic island in the middle of the Atlantic — dramatic cliffs, UNESCO ancient laurel forest, flowers everywhere year-round, and the most extraordinary wine in the world. Subtropical, wild, improbably beautiful. This is where the hiking, the views, and the adventure live.
     </p>
 
     <!-- WHERE TO STAY -->
-    <div class="subsection">
-      <p class="subsection-title">Where to Stay</p>
-      <div class="cards">
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🏨 Where to Stay</p>
+      <div class="rec-list">
 
-        <div class="card">
-          <p class="card-name"><em>Belmond Reid's Palace</em></p>
-          <span class="card-tag tag-iconic">The legendary choice</span>
-          <p class="card-body">Opened in 1891 on a clifftop above the Atlantic. Churchill stayed here to paint. The Empress of Austria came to recover. The gardens cascade down to private sea pools, the afternoon tea ritual is a Madeira institution, and the light off the ocean at dusk is genuinely one of the most beautiful things you will see in your life. For a 50th birthday, there is no better place on this island. From €450/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Belmond Reid's Palace, Funchal</p>
+          <span class="rec-tag tag-iconic">Clifftop Atlantic grand hotel since 1891</span>
+          <p class="rec-body">THE hotel of Madeira. Opened in 1891 on a clifftop above the Atlantic. Churchill stayed here to paint. The terraced gardens cascade down to private sea pools, the afternoon tea ritual is a Madeira institution, and the light off the ocean at dusk is genuinely one of the most beautiful things you'll ever see. For a 50th birthday, there is no better address on this island. From €450/night.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Choupana Hills</em></p>
-          <span class="card-tag tag-local">Forest retreat</span>
-          <p class="card-body">Up in the ancient laurisilva forest above Funchal — complete privacy, no sounds except birds and wind, an infinity pool facing the Atlantic. Smaller and more intimate than Reid's, with an extraordinary spa. If you want to disconnect from the world for four days, this is where you come. From €220/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Choupana Hills</p>
+          <span class="rec-tag tag-local">Forest retreat above Funchal</span>
+          <p class="rec-body">Up in the ancient laurisilva forest above the city — complete privacy, no sounds except birds and wind, an infinity pool facing the Atlantic. More intimate than Reid's, with an extraordinary spa. If you want to fully disconnect, this is where you come. From €220/night.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Casa Velha do Palheiro</em></p>
-          <span class="card-tag tag-pick">Hidden estate</span>
-          <p class="card-body">A 200-year-old manor house on a private estate with its own gardens, golf course, and winery. Five-star but feels like staying at a friend's extraordinary countryside estate. The restaurant serves food from the estate garden. Exceptional value for what it offers. From €280/night.</p>
+        <div class="rec-card">
+          <p class="rec-name">Casa Velha do Palheiro</p>
+          <span class="rec-tag tag-pick">Private estate manor</span>
+          <p class="rec-body">A 200-year-old manor house on a private estate with its own gardens, golf course, and winery. Five-star but feels like staying at a friend's extraordinary countryside estate. The restaurant serves produce from the estate garden. From €300/night.</p>
         </div>
 
       </div>
     </div>
 
     <!-- WHERE TO EAT -->
-    <div class="subsection">
-      <p class="subsection-title">Where to Eat</p>
-      <div class="cards">
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🍽 Where to Eat</p>
+      <div class="rec-list">
 
-        <div class="card">
-          <p class="card-name"><em>William</em> — Belmond Reid's Palace</p>
-          <span class="card-tag tag-star">✦ 1 Michelin Star</span>
-          <p class="card-body">Even if you don't stay at Reid's, you dine here. A terrace above the Atlantic, impeccable service, and a tasting menu that reads like a portrait of the island — Madeiran goat cheese, grilled black scabbardfish, local passion fruit and honey. The wine pairing includes a flight through the great styles of Madeira wine. Book on arrival.</p>
+        <div class="rec-card">
+          <p class="rec-name">William — Belmond Reid's Palace</p>
+          <span class="rec-tag tag-star">✦ 1 Michelin Star</span>
+          <p class="rec-body">Even if you don't stay at Reid's, you dine here. A terrace above the Atlantic, impeccable service, and a tasting menu that reads like a portrait of the island — Madeiran goat cheese, grilled black scabbardfish, local passion fruit and honey. The wine pairing includes a flight through the great styles of Madeira wine. Book on arrival in Madeira.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Armazém do Sal</em></p>
-          <span class="card-tag tag-pick">Our favourite</span>
-          <p class="card-body">An 18th-century salt warehouse in old Funchal, beautifully restored with exposed stone walls and candlelight. The best traditional Madeiran fine dining on the island — grilled espetada, bacalhau à lagareiro (roasted salt cod with olive oil and crushed potatoes), outstanding wine list. Warm, unhurried, perfect.</p>
+        <div class="rec-card">
+          <p class="rec-name">Armazém do Sal</p>
+          <span class="rec-tag tag-pick">Best traditional fine dining</span>
+          <p class="rec-body">An 18th-century salt warehouse in old Funchal, beautifully restored with exposed stone walls and candlelight. The best traditional Madeiran fine dining — espetada, bacalhau à lagareiro, outstanding wine list. Warm, unhurried, exceptional.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>Doca do Cavacas</em></p>
-          <span class="card-tag tag-local">Essential experience</span>
-          <p class="card-body">Rocky coastline west of Funchal, Atlantic waves, natural pools cut into volcanic rock — and a small restaurant where they grill lapas (limpets) directly on the rock with garlic butter. You eat them looking at the ocean. Simple, perfect, completely unforgettable. Go for lunch.</p>
+        <div class="rec-card">
+          <p class="rec-name">Doca do Cavacas</p>
+          <span class="rec-tag tag-local">Essential experience</span>
+          <p class="rec-body">Rocky coastline west of Funchal, Atlantic waves, natural pools cut into volcanic rock — and a small restaurant where they grill lapas (limpets) directly on the rock with garlic butter. You eat them looking at the ocean. Simple, perfect, completely unforgettable. Lunch only.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>AKUA by Octopus</em></p>
-          <span class="card-tag tag-pick">Best contemporary seafood</span>
-          <p class="card-body">The island's finest contemporary seafood restaurant, in the modern marina. The freshest Atlantic fish, handled with intelligence. Particularly good for grilled black scabbard (the deep-sea fish unique to Madeira), clams, and the limpet risotto.</p>
+        <div class="rec-card">
+          <p class="rec-name">AKUA by Octopus</p>
+          <span class="rec-tag tag-pick">Best contemporary seafood</span>
+          <p class="rec-body">The island's finest contemporary seafood restaurant, in the marina. The freshest Atlantic fish handled with intelligence — black scabbard, clams, an extraordinary limpet risotto. The wine list is one of the best on the island.</p>
         </div>
 
-        <div class="card">
-          <p class="card-name"><em>O Jango</em></p>
-          <span class="card-tag tag-local">Soul food</span>
-          <p class="card-body">No tourists, all locals — the real Madeiran table. Order the espetada (whole chunks of beef on a bay laurel skewer over charcoal — the smoke and the bay leaf do something extraordinary together), bolo do caco (Madeiran garlic flatbread), and milho frito (fried cornmeal squares). Loud, warm, exceptional.</p>
+        <div class="rec-card">
+          <p class="rec-name">O Jango</p>
+          <span class="rec-tag tag-local">Local soul food</span>
+          <p class="rec-body">No tourists, all locals. Order the espetada (beef on a bay laurel skewer over charcoal — the smoke and the bay leaf together are extraordinary), bolo do caco (Madeiran garlic flatbread), and milho frito (fried cornmeal). Loud, warm, exceptional.</p>
         </div>
 
       </div>
     </div>
 
-    <!-- EXPERIENCES -->
-    <div class="subsection">
-      <p class="subsection-title">What to Do</p>
+    <!-- EXPERIENCES — built for Nick the hiker and CrossFitter -->
+    <div class="sub-section reveal" data-delay="0">
+      <p class="sub-title">🗺 What to Do</p>
       <div class="exp-list">
 
         <div class="exp-item">
-          <span class="exp-num">1</span>
-          <div class="exp-content">
-            <p class="exp-title">Levada Walk to Caldeirão Verde</p>
-            <p class="exp-body">Madeira's ancient irrigation channels — levadas — cut through 25 kilometres of UNESCO-listed laurisilva forest (the last ancient laurel forest on earth). The walk to Caldeirão Verde follows a narrow ledge through tunnels and waterfalls to an impossibly green valley. You feel like the world has completely forgotten you exist. One of the great walks of Europe.</p>
+          <span class="exp-num" aria-hidden="true">1</span>
+          <div>
+            <p class="exp-title">25 Fontes Trail — Levada Hike</p>
+            <p class="exp-body">Built for you, Nick. A stunning levada (ancient irrigation channel) trail through UNESCO laurisilva forest to 25 natural springs and a 100m waterfall hidden in a volcanic crater. 8km round trip, dramatic landscapes, no crowds on weekday mornings. One of the great hikes of Europe.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">2</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">2</span>
+          <div>
             <p class="exp-title">Sunrise at Pico do Arieiro</p>
-            <p class="exp-body">Drive to 1,818 metres before dawn. Watch the sun rise above a sea of clouds while the peaks of Pico Ruivo catch the first gold light. Then hike the ridge between the two highest peaks on the island — above the clouds the whole way. Surreal and breathtaking in equal measure.</p>
+            <p class="exp-body">4:30am. Drive to 1,818 metres. Watch the sun rise above a sea of clouds while the peaks catch the first gold light. Then hike the ridge to Pico Ruivo — Madeira's highest peak — above the clouds the whole way. Surreal, breathtaking, and a proper physical challenge.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">3</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">3</span>
+          <div>
             <p class="exp-title">Cabo Girão</p>
-            <p class="exp-body">The second highest sea cliff in Europe. A glass-floored viewing platform extends out over the 590-metre drop to the Atlantic. Stand on it. Look down. Nick — you've done scarier things.</p>
+            <p class="exp-body">The second highest sea cliff in Europe. A glass-floored viewing platform extends out over the 590-metre drop to the Atlantic. Stand on it. Look down. Nick — you've definitely done scarier things at CrossFit.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">4</span>
-          <div class="exp-content">
-            <p class="exp-title">The Monte Toboggan</p>
-            <p class="exp-body">A Madeiran tradition since the 1850s: wicker basket toboggans on runners, racing down the steep cobblestone streets from Monte village, steered by two men in white linen suits and straw hats. It is completely absurd, deeply joyful, and utterly Madeiran.</p>
+          <span class="exp-num" aria-hidden="true">4</span>
+          <div>
+            <p class="exp-title">Private Sunset Catamaran Cruise</p>
+            <p class="exp-body">A private evening catamaran along the dramatic south coast sea cliffs — dramatic basalt formations, sea caves, the city of Funchal lit up at dusk from the water. Champagne included. Book through the Belmond concierge.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">5</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">5</span>
+          <div>
+            <p class="exp-title">Whale & Dolphin Watching</p>
+            <p class="exp-body">Sperm whales are resident year-round off the coast of Madeira — not migratory, resident. Pilot whales, bottlenose dolphins, and blue whales pass through. A half-day boat from Funchal marina. One of the best wildlife experiences in Europe, full stop.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <span class="exp-num" aria-hidden="true">6</span>
+          <div>
             <p class="exp-title">Porto Moniz Natural Pools</p>
-            <p class="exp-body">Natural lava rock pools on the wild northwestern tip of the island. Swimming in Atlantic seawater in volcanic pools, with waves crashing around you. One of those places that makes you feel genuinely alive. Drive through the north coast road to get there — spectacular the whole way.</p>
+            <p class="exp-body">Natural lava rock pools on the wild northwestern tip of the island. Swimming in Atlantic seawater in volcanic pools, with waves crashing around you. Drive the north coast road to get there — the most dramatic road in Portugal the whole way.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">6</span>
-          <div class="exp-content">
+          <span class="exp-num" aria-hidden="true">7</span>
+          <div>
             <p class="exp-title">Blandy's Wine Lodge</p>
-            <p class="exp-body">The most historic Madeira wine lodge in Funchal, operating since 1811 in a restored 17th-century convent. Tour the old lodges where the pipes are stacked floor to ceiling, then taste through all four styles — Sercial (bone dry), Verdelho (medium dry), Bual (medium rich), Malmsey (luscious sweet). These wines age for decades. Some of the bottles in the lodge are older than Portugal itself.</p>
+            <p class="exp-body">The most historic Madeira wine lodge in Funchal, operating since 1811. Tour the old lodges where pipes are stacked floor to ceiling, then taste through all four styles — Sercial (bone dry), Verdelho (medium dry), Bual (medium rich), Malmsey (luscious sweet). Some bottles in the lodge are older than the USA.</p>
           </div>
         </div>
 
         <div class="exp-item">
-          <span class="exp-num">7</span>
-          <div class="exp-content">
-            <p class="exp-title">Whale Watching</p>
-            <p class="exp-body">Sperm whales are resident year-round off the coast of Madeira — not migratory, not seasonal. Resident. Pilot whales, bottlenose dolphins, and blue whales pass through regularly. A half-day boat from Funchal marina is one of the best wildlife experiences in Europe. In the Atlantic. On your birthday trip. Yes.</p>
+          <span class="exp-num" aria-hidden="true">8</span>
+          <div>
+            <p class="exp-title">The Monte Toboggan</p>
+            <p class="exp-body">A Madeiran tradition since the 1850s: wicker basket toboggans on runners, racing down the steep cobblestone streets from Monte, steered by two men in white linen suits and straw hats. Completely absurd. Deeply joyful. Utterly Madeiran.</p>
           </div>
         </div>
 
       </div>
     </div>
-  </section>
+  </article>
 
-  <!-- ════════════════════════════════════════════
-       ACT III · THE FOOD
-       ════════════════════════════════════════════ -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-number" aria-hidden="true">III</div>
-      <div class="section-titles">
-        <p class="section-eyebrow">Eat Your Way Through Portugal</p>
-        <h2 class="section-city">The <em>Table</em></h2>
+  <!-- ═══════════════════════════════════════
+       CHAPTER III — THE FOOD
+  ═══════════════════════════════════════ -->
+  <article class="chapter">
+    <header class="chapter-header reveal" data-delay="0">
+      <span class="chapter-num" aria-hidden="true">III</span>
+      <div>
+        <p class="chapter-eyebrow">Eat Your Way Through Portugal</p>
+        <h2 class="chapter-city">The Table</h2>
       </div>
-    </div>
+    </header>
 
-    <p class="section-desc">
-      Portugal has one of the great culinary traditions in the world — simple ingredients, ancient techniques, extraordinary produce from the Atlantic, the Douro and the south. Here's what you must eat.
+    <p class="chapter-desc reveal" data-delay="100">
+      Portugal has one of the great culinary traditions in the world — simple ingredients, ancient techniques, extraordinary produce from the Atlantic, the Douro, and the south. Here's what you must eat.
     </p>
 
-    <div class="food-grid">
+    <div class="food-grid reveal" data-delay="0">
 
       <div class="food-card">
-        <p class="food-name"><em>Pastel de Nata</em></p>
-        <p class="food-desc">The custard tart. Eat them warm from Pastéis de Belém in Lisbon — the recipe has been kept secret since 1837. Dusted with cinnamon, next to a bica (espresso). The single most important food experience in Portugal.</p>
+        <p class="food-name">Pastel de Nata</p>
+        <p class="food-desc">The custard tart. Eat them warm from Pastéis de Belém — recipe secret since 1837. Dusted with cinnamon next to a bica. The single most important food experience in Portugal.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Bacalhau</em></p>
-        <p class="food-desc">Salt cod. The national obsession — 365 recipes, one for every day of the year. Try bacalhau à Brás (shredded with eggs and straw potatoes), bacalhau com natas (baked in cream), and bacalhau à lagareiro (whole roasted with olive oil and garlic).</p>
+        <p class="food-name">Bacalhau</p>
+        <p class="food-desc">Salt cod. The national obsession — 365 recipes, one for every day of the year. Try bacalhau à Brás (shredded with eggs), bacalhau com natas (baked in cream), and à lagareiro (whole-roasted with olive oil).</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Amêijoas à Bulhão Pato</em></p>
-        <p class="food-desc">Clams with garlic, white wine, butter and fresh coriander. One of the simplest and most perfect things you will eat anywhere in the world. Order them at every opportunity.</p>
+        <p class="food-name">Amêijoas à Bulhão Pato</p>
+        <p class="food-desc">Clams with garlic, white wine, butter and cilantro. One of the simplest and most perfect things you'll eat in your life. Order them at every opportunity.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Polvo à Lagareiro</em></p>
-        <p class="food-desc">Whole roasted octopus, its tentacles crisped in olive oil, served over crushed potatoes and garlic. A revelation. Order it every time you see it on the menu — and it will be on every menu.</p>
+        <p class="food-name">Polvo à Lagareiro</p>
+        <p class="food-desc">Whole roasted octopus, tentacles crisped in olive oil, over crushed potatoes and garlic. A revelation. Order it every time you see it on the menu — and it will be on every menu.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Percebes</em></p>
-        <p class="food-desc">Gooseneck barnacles, harvested off Atlantic rocks by men dangling on ropes. They look prehistoric. They taste exactly like the ocean. Order them at Cervejaria Ramiro and eat them with your hands.</p>
+        <p class="food-name">Percebes</p>
+        <p class="food-desc">Gooseneck barnacles, harvested off Atlantic rocks. They look prehistoric. They taste exactly like the ocean. Order them at Cervejaria Ramiro and eat with your hands.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Espetada</em></p>
-        <p class="food-desc">Madeira's great dish: large cubes of beef on a bay laurel skewer, cooked over charcoal. The smoke and the bay leaf perfume the meat in a way nothing else does. Eat it at O Jango with bolo do caco (garlic flatbread).</p>
+        <p class="food-name">Espetada</p>
+        <p class="food-desc">Madeira's great dish: beef on a bay laurel skewer, over charcoal. The smoke and the bay leaf perfume the meat in a way nothing else does. Eat at O Jango with bolo do caco.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Lapas</em></p>
-        <p class="food-desc">Madeiran limpets. Grilled on volcanic rock with garlic butter and a squeeze of lemon. Eat them at Doca do Cavacas with your feet near the ocean. One of the most elemental food experiences on earth.</p>
+        <p class="food-name">Lapas</p>
+        <p class="food-desc">Madeiran limpets grilled on volcanic rock with garlic butter. Eat them at Doca do Cavacas with your feet near the ocean. One of the most elemental food experiences on earth.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Ginjinha</em></p>
-        <p class="food-desc">Lisbon's sour cherry liqueur, served from tiny kiosks on street corners. They pour it into a small chocolate cup. You eat the cup. It costs €1.50. This is the best €1.50 you will spend in Portugal.</p>
+        <p class="food-name">Ginjinha</p>
+        <p class="food-desc">Lisbon's sour cherry liqueur, sold from street kiosks. Served in a chocolate cup — you eat the cup. €1.50. The best €1.50 you will spend in Portugal.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Poncha</em></p>
-        <p class="food-desc">Madeira's drink: sugarcane spirit, wild flower honey, lemon juice. Mixed in a wooden barrel with a wooden pestle at a poncha bar. The real version is something entirely different from what you've heard. Dangerous in the best way.</p>
+        <p class="food-name">Poncha</p>
+        <p class="food-desc">Madeira's drink: sugarcane spirit, wild flower honey, lemon. Mixed at a poncha bar with a wooden pestle. The real version is something else entirely. Dangerous in the best way.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Madeira Wine</em></p>
-        <p class="food-desc">One of the world's great fortified wines, unique to the island. Four styles from bone dry (Sercial) to lusciously sweet (Malmsey). Some bottles predate the American Revolution. Taste them all at Blandy's. Buy a bottle of 20-year Bual to bring home.</p>
+        <p class="food-name">Madeira Wine</p>
+        <p class="food-desc">One of the world's great fortified wines. Four styles from bone dry (Sercial) to lusciously sweet (Malmsey). Some bottles predate the American Revolution. Taste them all at Blandy's.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Vinho Verde</em></p>
-        <p class="food-desc">Portugal's fresh young wine from the northwest — light, slightly effervescent, deceptively low alcohol. Perfect for Lisbon lunches in the sun. Try Alvarinho from the Minho region — the finest expression of the style.</p>
+        <p class="food-name">Vinho Verde</p>
+        <p class="food-desc">Portugal's fresh young wine — light, slightly effervescent, low alcohol. Perfect for Lisbon lunches in the sun. Ask for Alvarinho from the Minho — the finest expression.</p>
       </div>
 
       <div class="food-card">
-        <p class="food-name"><em>Bolo de Mel</em></p>
-        <p class="food-desc">Madeira's dense, dark honey cake made with sugarcane molasses, spices, and dried fruit. A Christmas tradition eaten year-round. Break it apart with your hands — never cut it. A piece of the island to take home.</p>
+        <p class="food-name">Bolo de Mel</p>
+        <p class="food-desc">Madeira's dense, dark honey cake made with sugarcane molasses and spices. Break it apart with your hands — never cut it. A piece of the island to take home.</p>
       </div>
 
+    </div>
+  </article>
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER IV — THE ITINERARY
+  ═══════════════════════════════════════ -->
+  <article class="chapter">
+    <header class="chapter-header reveal" data-delay="0">
+      <span class="chapter-num" aria-hidden="true">IV</span>
+      <div>
+        <p class="chapter-eyebrow">10 Days · Lisbon then Madeira</p>
+        <h2 class="chapter-city">The Journey</h2>
+      </div>
+    </header>
+
+    <div class="itinerary reveal" data-delay="0">
+
+      <div class="itin-row">
+        <p class="itin-day">Day 1</p>
+        <div class="itin-content">
+          <p class="itin-title">Arrive Lisbon</p>
+          <p class="itin-body">Check in. Evening walk through Chiado — Livraria Bertrand (the world's oldest bookshop), a glass of Vinho Verde at a terrace café. Dinner at Solar dos Presuntos. Early night — the next nine days are full.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 2</p>
+        <div class="itin-content">
+          <p class="itin-title">Alfama & Private Guided Tour</p>
+          <p class="itin-body">Walk Alfama before 9am. Guided tour of the quarter and São Jorge Castle. Afternoon free. Sunset at Miradouro da Graça. Fado dinner at Tasca do Chico. Ginjinha on the way home.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 3</p>
+        <div class="itin-content">
+          <p class="itin-title">Belém Day</p>
+          <p class="itin-body">Jerónimos Monastery (arrive at opening). Pastéis de Belém next door — eat three. Torre de Belém. Lunch at Time Out Market. Dinner: Cura at the Ritz, full tasting menu.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 4</p>
+        <div class="itin-content">
+          <p class="itin-title">Sintra & Cascais</p>
+          <p class="itin-body">Train to Sintra. Pena Palace at opening. Quinta da Regaleira. Lunch in the village. Drive to Cascais for the afternoon. Dinner: Cervejaria Ramiro. Order everything.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 5</p>
+        <div class="itin-content">
+          <p class="itin-title">Lisbon Free + Belcanto</p>
+          <p class="itin-body">Morning at LX Factory Sunday market (if Sunday). Afternoon: Museu Nacional do Azulejo. Evening: Belcanto. The full tasting menu. This is the dinner of the trip. This is the dinner of the year.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 6</p>
+        <div class="itin-content">
+          <p class="itin-title">Fly to Madeira</p>
+          <p class="itin-body">Morning flight from Lisbon (1h10min). Check into Reid's Palace. Afternoon: explore Funchal old town, Mercado dos Lavradores. Dinner: Armazém do Sal. First poncha of the trip.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 7</p>
+        <div class="itin-content">
+          <p class="itin-title">25 Fontes Levada Hike</p>
+          <p class="itin-body">Full day in the ancient forest. Levada to 25 Fontes waterfall. Pack lunch. Return to Funchal in late afternoon. Swim at Reid's pool. Sundowner on the terrace with a glass of Sercial Madeira. Dinner at the hotel.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 8</p>
+        <div class="itin-content">
+          <p class="itin-title">Above the Clouds</p>
+          <p class="itin-body">4:30am: drive to Pico do Arieiro for sunrise — yes it's worth it. Hike to Pico Ruivo. Back by noon. Monte toboggan. Blandy's wine tasting. Dinner: William at Reid's. The dinner of Madeira.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 9</p>
+        <div class="itin-content">
+          <p class="itin-title">The Wild North</p>
+          <p class="itin-body">Drive the north coast road to Porto Moniz. Swim in the natural lava pools. Lunch: grilled fish at the pools. Cabo Girão on the way back. Dinner: AKUA in the marina. Sunset catamaran cruise.</p>
+        </div>
+      </div>
+
+      <div class="itin-row">
+        <p class="itin-day">Day 10</p>
+        <div class="itin-content">
+          <p class="itin-title">Whale Watching + Fly Home</p>
+          <p class="itin-body">Morning whale watching boat from Funchal marina. Return to hotel. Last swim at Reid's pool. Afternoon flight home. Nick — you are a different person from the one who landed ten days ago. Portugal does that.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ── FAMILY CLOSING MESSAGE ── -->
+  <section style="padding: var(--space-xl) var(--space-md); max-width: 900px; margin: 0 auto;">
+    <div class="closing-card reveal" data-delay="0">
+      <blockquote class="closing-quote">
+        "Nick — 50 years of being our hero, our compass, our biggest fan. You've given us everything, every single day, without ever asking for anything back. Now it's our turn.<br><br>
+        Portugal is waiting, and so are we.<br><br>
+        Happy Birthday, Dad. We love you more than you know."
+      </blockquote>
+      <p class="closing-sig">— Kylie &amp; Blake ❤️</p>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════
-       ACT IV · THE ITINERARY
-       ════════════════════════════════════════════ -->
-  <section class="section" style="background: #EEE7D5;">
-    <div class="section-header">
-      <div class="section-number" aria-hidden="true">IV</div>
-      <div class="section-titles">
-        <p class="section-eyebrow">10 Days · Lisbon then Madeira</p>
-        <h2 class="section-city">The <em>Journey</em></h2>
-      </div>
-    </div>
+  <nav class="page-nav" style="padding-bottom: var(--space-xl); text-align: center;">
+    <a href="family.html" class="back-link" aria-label="Back to gifts page">← Back to gifts</a>
+  </nav>
 
-    <div class="itinerary">
-
-      <div class="itin-day">
-        <p class="itin-label">Day 1</p>
-        <div class="itin-text">
-          <strong>Arrive Lisbon</strong>
-          Check into Bairro Alto Hotel. Evening walk through Chiado — Livraria Bertrand (the world's oldest bookshop), a glass of Vinho Verde at a terrace café. Dinner at Solar dos Presuntos: presunto, petiscos, Douro red wine. Early night — the next nine days are full.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 2</p>
-        <div class="itin-text">
-          <strong>Alfama &amp; São Jorge Castle</strong>
-          Wake early, walk to Alfama before 9am. Climb to São Jorge Castle. Coffee at a local pastelaria. Afternoon: Miradouro da Graça at sunset. Evening: book a table at Tasca do Chico for fado dinner. A glass of ginjinha from a street kiosk on the way home.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 3</p>
-        <div class="itin-text">
-          <strong>Belém Day</strong>
-          Morning at Jerónimos Monastery (arrive at opening). Pastéis de Belém next door — eat two, then eat another. Torre de Belém, Monument to the Discoveries. Lunch at Time Out Market. Afternoon free. Evening: dinner at Alma — the tasting menu, full wine pairing.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 4</p>
-        <div class="itin-text">
-          <strong>Sintra Day Trip</strong>
-          Train from Rossio station (40 min). Pena Palace first — arrive at opening. Walk to Quinta da Regaleira, descend the initiation well. Lunch in Sintra village. Back to Lisbon by 5pm. Dinner: Cervejaria Ramiro. Order everything. Leave nothing.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 5</p>
-        <div class="itin-text">
-          <strong>Lisbon Free Day + Belcanto</strong>
-          Morning at LX Factory market. Afternoon: Museu Nacional do Azulejo (the tile museum — extraordinary and often missed). Evening: Belcanto. The whole tasting menu. This is the meal of the trip. This is the meal of the year.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 6</p>
-        <div class="itin-text">
-          <strong>Fly to Madeira</strong>
-          Morning flight from Lisbon (1h10min). Check into Belmond Reid's Palace. Afternoon: explore Funchal old town, Mercado dos Lavradores (the covered flower and fruit market). Evening: Armazém do Sal. First poncha of the trip.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 7</p>
-        <div class="itin-text">
-          <strong>Levada Walk</strong>
-          Full day: Levada do Caldeirão Verde through the ancient forest. Pack lunch. Return to Funchal in late afternoon. Swim at Reid's pool. Sundowner on the terrace with a glass of Sercial Madeira watching the sun go into the Atlantic. Dinner: relaxed, at the hotel.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 8</p>
-        <div class="itin-text">
-          <strong>Above the Clouds</strong>
-          4:30am alarm. Drive to Pico do Arieiro for sunrise — yes, it's worth it. Hike to Pico Ruivo. Back to Funchal by early afternoon. Monte toboggan (why not). Blandy's Wine Lodge for tastings. Evening: dinner at William. This is the dinner of Madeira.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 9</p>
-        <div class="itin-text">
-          <strong>The Wild North</strong>
-          Drive the north coast road to Porto Moniz — dramatic cliffs, waterfalls, cloud forests. Swim in the natural pools. Lunch: fresh grilled fish at a poolside restaurant. Stop at Cabo Girão on the way back. Dinner: AKUA in the marina. Last Madeiran wine.
-        </div>
-      </div>
-
-      <div class="itin-day">
-        <p class="itin-label">Day 10</p>
-        <div class="itin-text">
-          <strong>Last Morning</strong>
-          Whale watching boat from Funchal marina (4 hours, book ahead). Return to hotel. Afternoon flight home. Nick, you are a different person from the one who landed ten days ago. Portugal does that.
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── CLOSING ── -->
-  <div class="closing">
-    <div class="closing-rule"></div>
-    <h2>Happy 50th,<br><em>Nick.</em></h2>
-    <p>
-      You've spent fifty years giving us everything — your time, your love, your patience, your very best self on every ordinary Tuesday. This summer, we give you ten days on the other side of the world, eating extraordinary food and standing above clouds and drinking wine older than any of us.<br><br>
-      This is what fifty looks like when you've earned it.
-    </p>
-    <p class="closing-sig">With so much love — Kylie &amp; Blake</p>
-  </div>
-
-  <div class="nav-row">
-    <a href="gifts.html" class="nav-back">← Back to gifts</a>
-  </div>
-
-  <div class="page-indicator">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-  </div>
-
+  <script src="js/main.js" defer></script>
 </body>
 </html>
