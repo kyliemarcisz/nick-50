@@ -958,6 +958,293 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════
+   SCRAPBOOK — Zone A (Polaroid Wall), Zone B (Filmstrip),
+   Zone C (Scatter Board)
+═══════════════════════════════════════════════════ */
+
+.scrapbook {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.scrapbook-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.scrapbook-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.scrapbook-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1;
+}
+
+/* ── ZONE A · POLAROID WALL ── */
+
+.polaroid-wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1.5rem;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.polaroid {
+  background: #fefefe;
+  padding: 0.75rem 0.75rem 2.5rem;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.45),
+    0 1px 3px rgba(0,0,0,0.3);
+  position: relative;
+  width: 180px;
+  transition: transform 350ms var(--ease-out), box-shadow 350ms var(--ease-out);
+  cursor: default;
+}
+
+.polaroid:hover {
+  transform: scale(1.06) rotate(0deg) !important;
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.6),
+    0 4px 12px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.polaroid .photo-slot {
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.polaroid .photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+  margin: 0.5rem 0 0;
+  line-height: 1.2;
+}
+
+/* Tape decoration */
+.tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 20px;
+  background: rgba(255, 182, 18, 0.45);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.tape.tape-angled {
+  transform: translateX(-50%) rotate(8deg);
+}
+
+/* Rotation classes */
+.rotate-left  { transform: rotate(-3.5deg); }
+.rotate-right { transform: rotate(2.5deg); }
+.rotate-left2 { transform: rotate(-6deg); }
+.rotate-right2{ transform: rotate(4deg); }
+.rotate-left3 { transform: rotate(-1.5deg); }
+
+/* ── ZONE B · FILMSTRIP ── */
+
+.filmstrip-wrap {
+  margin: var(--space-lg) 0;
+  position: relative;
+}
+
+.filmstrip-label {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.filmstrip-track {
+  position: relative;
+  background: #1a1a1a;
+  padding: 28px 0;
+  overflow: hidden;
+}
+
+/* Sprocket holes top */
+.filmstrip-track::before,
+.filmstrip-track::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 18px,
+    #0D0D0D 18px,
+    #0D0D0D 30px,
+    transparent 30px,
+    transparent 48px
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.filmstrip-track::before { top: 3px; }
+.filmstrip-track::after  { bottom: 3px; }
+
+.film-frames {
+  display: flex;
+  gap: 6px;
+  padding: 0 var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.film-frames::-webkit-scrollbar { display: none; }
+
+.film-frame {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  border: 3px solid #333;
+  overflow: hidden;
+  background: #111;
+  position: relative;
+}
+
+.film-frame .photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms var(--ease-out);
+}
+
+.film-frame:hover .photo-slot img {
+  transform: scale(1.05);
+}
+
+/* ── ZONE C · SCATTER BOARD ── */
+
+.scatter-board {
+  column-count: 4;
+  column-gap: 1.25rem;
+  padding: var(--space-md) 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.scatter-item {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+  position: relative;
+  transition: transform 350ms var(--ease-out);
+}
+
+.scatter-item:hover {
+  transform: scale(1.03);
+  z-index: 5;
+  position: relative;
+}
+
+/* Nth-child micro-rotations for organic feel */
+.scatter-item:nth-child(3n+1) { transform: rotate(-1.2deg); }
+.scatter-item:nth-child(3n+2) { transform: rotate(0.8deg); }
+.scatter-item:nth-child(3n+3) { transform: rotate(-2deg); }
+
+.scatter-item:nth-child(3n+1):hover,
+.scatter-item:nth-child(3n+2):hover,
+.scatter-item:nth-child(3n+3):hover { transform: scale(1.04) rotate(0deg); }
+
+/* Polaroid-style scatter items */
+.scatter-item.is-polaroid {
+  background: #fefefe;
+  padding: 0.6rem 0.6rem 2.2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+}
+
+.scatter-item.is-polaroid .polaroid-caption {
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #333;
+  text-align: center;
+  margin: 0.4rem 0 0;
+}
+
+/* Plain scatter items */
+.scatter-item:not(.is-polaroid) .photo-slot {
+  overflow: hidden;
+}
+
+.scatter-item:not(.is-polaroid) .photo-slot img {
+  transition: transform 400ms var(--ease-out);
+}
+
+.scatter-item:not(.is-polaroid):hover .photo-slot img {
+  transform: scale(1.06);
+}
+
+/* Shared photo slot */
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Photo slot placeholder (no image yet) */
+.photo-slot:not(:has(img[src$=".jpg"])):not(:has(img[src$=".png"])):not(:has(img[src$=".webp"])) {
+  background: #1e1e1e;
+  min-height: 120px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .scatter-board { column-count: 3; }
+  .polaroid-wall  { gap: 1.5rem 1rem; }
+  .polaroid       { width: 155px; }
+}
+
+@media (max-width: 640px) {
+  .scatter-board { column-count: 2; }
+  .polaroid-wall  { gap: 1.2rem 0.75rem; }
+  .polaroid       { width: 140px; }
+  .film-frame     { flex: 0 0 200px; }
+}
+
+@media (max-width: 400px) {
+  .scatter-board { column-count: 1; }
+  .polaroid       { width: 100%; max-width: 220px; }
+}
+
+/* ═══════════════════════════════════════════════════
    PREFERS-REDUCED-MOTION
    Disable all non-essential animation and transition.
 ═══════════════════════════════════════════════════ */

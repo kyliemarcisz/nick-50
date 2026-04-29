@@ -49,29 +49,240 @@
     </div>
   </div>
 
-  <!-- ── PHOTO GRID ── -->
-  <section class="photo-section">
-    <div class="photo-grid">
-      <!-- HERO PHOTO: Replace src with your image path, e.g. "images/nick-hero.jpg" -->
-      <div class="photo-slot photo-hero reveal" data-delay="0" data-label="add hero photo of nick">
-        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/4">
+  <!-- ══════════════════════════════════════════════════════
+       SCRAPBOOK — 30 photo slots across 3 zones.
+       To add photos: drop files in the images/ folder and
+       update the src="" on each <img>. Aspect ratios are
+       pre-set so layout won't shift when images load.
+       ══════════════════════════════════════════════════════ -->
+  <section class="scrapbook" aria-label="Nick's photo archive">
+
+    <div class="scrapbook-header reveal" data-delay="0">
+      <p class="scrapbook-eyebrow">Fifty Years &nbsp;·&nbsp; Thirty Frames</p>
+      <h2 class="scrapbook-title">The Nick Archives</h2>
+    </div>
+
+    <!-- ── ZONE A · POLAROID WALL — photos 01–05
+         Best 5 shots. Portrait orientation (4:5) looks best. ── -->
+    <div class="polaroid-wall" aria-label="Featured polaroids">
+
+      <div class="polaroid rotate-left reveal" data-delay="0">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 01">
+          <img src="images/p01.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">the legend</p>
       </div>
 
-      <!-- PHOTO 2 -->
-      <div class="photo-slot photo-sm-1 reveal" data-delay="100" data-label="add photo of nick">
-        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+      <div class="polaroid rotate-right2 reveal" data-delay="80">
+        <span class="tape tape-angled" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 02">
+          <img src="images/p02.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">game day</p>
       </div>
 
-      <!-- PHOTO 3 -->
-      <div class="photo-slot photo-sm-2 reveal" data-delay="200" data-label="add photo of nick">
-        <img src="" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+      <div class="polaroid rotate-left2 reveal" data-delay="160">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 03">
+          <img src="images/p03.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">peak dad</p>
       </div>
 
-      <!-- WIDE PHOTO: group shot, vacation, etc. -->
-      <div class="photo-slot photo-wide reveal" data-delay="100" data-label="add wide photo">
-        <img src="" alt="Nick with family" loading="lazy" decoding="async" style="aspect-ratio:16/6">
+      <div class="polaroid rotate-right reveal" data-delay="240">
+        <span class="tape tape-angled" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 04">
+          <img src="images/p04.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">steelers season</p>
+      </div>
+
+      <div class="polaroid rotate-left3 reveal" data-delay="320">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 05">
+          <img src="images/p05.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">g.o.a.t.</p>
+      </div>
+
+    </div>
+
+    <!-- ── ZONE B · FILMSTRIP — photos 06–13
+         Landscape photos (3:2 ratio) look best here. ── -->
+    <div class="filmstrip-wrap reveal" data-delay="0">
+      <p class="filmstrip-label" aria-hidden="true">✦ &nbsp; THE NICK CHRONICLES &nbsp; ✦</p>
+      <div class="filmstrip-track">
+        <div class="film-frames" role="list" aria-label="Filmstrip of memories">
+
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 06">
+              <img src="images/p06.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 07">
+              <img src="images/p07.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 08">
+              <img src="images/p08.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 09">
+              <img src="images/p09.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 10">
+              <img src="images/p10.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 11">
+              <img src="images/p11.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 12">
+              <img src="images/p12.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+          <div class="film-frame" role="listitem">
+            <div class="photo-slot" data-label="photo 13">
+              <img src="images/p13.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
+
+    <!-- ── ZONE C · SCATTER BOARD — photos 14–30
+         CSS column masonry. Mix portrait (4:5) and landscape (4:3).
+         .is-polaroid items get a white frame + handwritten caption. ── -->
+    <div class="scatter-board reveal" data-delay="0" aria-label="Photo scatter board">
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 14">
+          <img src="images/p14.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">backyard vibes</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 15">
+          <img src="images/p15.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 16">
+          <img src="images/p16.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">always winning</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 17">
+          <img src="images/p17.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 18">
+          <img src="images/p18.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 19">
+          <img src="images/p19.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">crossfit nick</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 20">
+          <img src="images/p20.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 21">
+          <img src="images/p21.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">family first</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 22">
+          <img src="images/p22.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 23">
+          <img src="images/p23.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 24">
+          <img src="images/p24.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">just like that</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 25">
+          <img src="images/p25.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 26">
+          <img src="images/p26.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">still got it</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 27">
+          <img src="images/p27.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 28">
+          <img src="images/p28.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+      </div>
+
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="photo-slot" data-label="photo 29">
+          <img src="images/p29.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
+        </div>
+        <p class="polaroid-caption">the real boss</p>
+      </div>
+
+      <div class="scatter-item">
+        <div class="photo-slot" data-label="photo 30">
+          <img src="images/p30.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <!-- ── COPY BLOCK ── -->
@@ -96,8 +307,8 @@
       <span class="stat-label">Kids Who Adore You</span>
     </div>
     <div class="stat reveal" data-delay="240" role="listitem">
-      <span class="stat-number">1</span>
-      <span class="stat-label">Family Trip to Portugal</span>
+      <span class="stat-number">∞</span>
+      <span class="stat-label">More Adventures to Come</span>
     </div>
   </div>
 
