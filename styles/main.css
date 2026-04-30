@@ -958,6 +958,89 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════
+   PORTUGAL PAGE · PHOTO ELEMENTS
+═══════════════════════════════════════════════════ */
+
+/* Full-width cinematic band — between hero and chapters */
+.chapter-band {
+  width: 100%;
+  height: clamp(220px, 35vw, 420px);
+  overflow: hidden;
+  display: block;
+}
+
+.chapter-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+/* Rec-card photo header */
+.rec-img {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+  border-radius: 6px 6px 0 0;
+}
+
+.rec-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 500ms var(--ease-out);
+}
+
+.rec-card:hover .rec-img img {
+  transform: scale(1.06);
+}
+
+/* Experience item photo strip */
+.exp-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: 0.6rem 0 0.75rem;
+  border-radius: 6px;
+}
+
+.exp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 500ms var(--ease-out);
+}
+
+.exp-item:hover .exp-img img {
+  transform: scale(1.04);
+}
+
+/* Food card photo */
+.food-img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+}
+
+.food-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 500ms var(--ease-out);
+}
+
+.food-card:hover .food-img img {
+  transform: scale(1.06);
+}
+
+/* ═══════════════════════════════════════════════════
    SCRAPBOOK — Zone A (Polaroid Wall), Zone B (Filmstrip),
    Zone C (Scatter Board)
 ═══════════════════════════════════════════════════ */
