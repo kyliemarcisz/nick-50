@@ -88,12 +88,14 @@
    on mobile.
 ───────────────────────────────────────── */
 class ParticleSystem {
-  constructor(canvas) {
+  constructor(canvas, opts = {}) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.particles = [];
     this.animationId = null;
     this.maxParticles = window.innerWidth < 768 ? 30 : 60;
+    this.colors  = opts.colors  || ['#FFB612'];
+    this.confetti = opts.confetti || false;
 
     this._loop = this._loop.bind(this);
     this._onResize = this._onResize.bind(this);
@@ -117,14 +119,20 @@ class ParticleSystem {
   }
 
   _createParticle(atBottom = false) {
+    const color   = this.colors[Math.floor(Math.random() * this.colors.length)];
+    const isRect  = this.confetti && Math.random() > 0.45;
     return {
-      x:      Math.random() * this._w,
-      y:      atBottom ? this._h + Math.random() * 20 : Math.random() * this._h,
-      r:      Math.random() * 2.5 + 0.5,
-      vx:     (Math.random() - 0.5) * 0.35,
-      vy:     -(Math.random() * 0.5 + 0.15),  // drift upward
-      alpha:  Math.random() * 0.55 + 0.08,
-      decay:  Math.random() * 0.004 + 0.001,
+      x:        Math.random() * this._w,
+      y:        atBottom ? this._h + Math.random() * 20 : Math.random() * this._h,
+      r:        Math.random() * 2.8 + 0.8,
+      vx:       (Math.random() - 0.5) * 0.4,
+      vy:       -(Math.random() * 0.55 + 0.15),
+      alpha:    Math.random() * 0.6 + 0.1,
+      decay:    Math.random() * 0.004 + 0.001,
+      color,
+      isRect,
+      rot:      Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.06,
     };
   }
 
@@ -140,6 +148,7 @@ class ParticleSystem {
       p.x += p.vx;
       p.y += p.vy;
       p.alpha -= p.decay;
+      if (p.isRect) p.rot += p.rotSpeed;
 
       if (p.y < -10 || p.alpha <= 0) {
         this.particles[i] = this._createParticle(true);
@@ -152,10 +161,16 @@ class ParticleSystem {
     this.particles.forEach(p => {
       this.ctx.save();
       this.ctx.globalAlpha = Math.max(0, p.alpha);
-      this.ctx.fillStyle = '#FFB612';
-      this.ctx.beginPath();
-      this.ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      this.ctx.fill();
+      this.ctx.fillStyle = p.color;
+      if (p.isRect) {
+        this.ctx.translate(p.x, p.y);
+        this.ctx.rotate(p.rot);
+        this.ctx.fillRect(-p.r, -p.r * 0.5, p.r * 2, p.r);
+      } else {
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        this.ctx.fill();
+      }
       this.ctx.restore();
     });
   }
@@ -201,11 +216,14 @@ class ParticleSystem {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
 
-  // Respect prefers-reduced-motion
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
 
-  new ParticleSystem(canvas);
+  const isHome = document.body.dataset.page === 'home';
+  new ParticleSystem(canvas, isHome ? {
+    colors:   ['#FFB612', '#C8102E', '#FFD700', '#FF9900', '#fff'],
+    confetti: true,
+  } : {});
 })();
 
 

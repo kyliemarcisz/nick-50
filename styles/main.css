@@ -1041,6 +1041,116 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════
+   BIRTHDAY CELEBRATION ELEMENTS
+═══════════════════════════════════════════════════ */
+
+/* Hero badge pill */
+.hero-bday-badge {
+  display: inline-block;
+  background: var(--color-gold);
+  color: #0D0D0D;
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.4rem;
+  border-radius: 100px;
+  margin-top: 1.25rem;
+  animation: badgePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,182,18,0.5); }
+  50%       { box-shadow: 0 0 0 14px rgba(255,182,18,0); }
+}
+
+/* Confetti streamers in hero */
+.hero-streamers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.streamer {
+  position: absolute;
+  top: -80px;
+  width: 4px;
+  height: 70px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: streamerFall linear infinite;
+}
+
+.streamer.s1 { left:  8%; background: var(--color-gold);  animation-duration: 4.2s; animation-delay: 0.3s;  width: 3px; height: 55px; }
+.streamer.s2 { left: 17%; background: var(--color-red);   animation-duration: 5.1s; animation-delay: 1.1s;  width: 5px; height: 80px; }
+.streamer.s3 { left: 32%; background: var(--color-gold);  animation-duration: 3.8s; animation-delay: 0.7s;  width: 3px; height: 60px; }
+.streamer.s4 { left: 48%; background: #fff;               animation-duration: 4.6s; animation-delay: 0.0s;  width: 4px; height: 45px; opacity: 0.3; }
+.streamer.s5 { left: 58%; background: var(--color-gold);  animation-duration: 5.3s; animation-delay: 1.8s;  width: 6px; height: 90px; }
+.streamer.s6 { left: 71%; background: var(--color-red);   animation-duration: 4.0s; animation-delay: 0.5s;  width: 3px; height: 65px; }
+.streamer.s7 { left: 83%; background: var(--color-gold);  animation-duration: 3.5s; animation-delay: 2.2s;  width: 5px; height: 50px; }
+.streamer.s8 { left: 93%; background: #fff;               animation-duration: 4.9s; animation-delay: 0.9s;  width: 4px; height: 75px; opacity: 0.3; }
+
+@keyframes streamerFall {
+  0%   { transform: translateY(0)    rotate(0deg);   opacity: 0; }
+  8%   { opacity: 0.9; }
+  90%  { opacity: 0.9; }
+  100% { transform: translateY(105vh) rotate(520deg); opacity: 0; }
+}
+
+/* Full-width birthday banner */
+.bday-banner {
+  background: var(--color-gold);
+  color: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.9rem 2rem;
+  overflow: hidden;
+}
+
+.bday-text {
+  font-family: var(--font-label);
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bday-num-big {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  line-height: 1;
+  color: var(--color-bg);
+}
+
+.bday-confetti {
+  font-size: 1.4rem;
+  line-height: 1;
+  animation: confettiBounce 1.6s ease-in-out infinite;
+}
+
+.bday-confetti:last-child {
+  animation-delay: 0.8s;
+}
+
+@keyframes confettiBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  40%       { transform: translateY(-6px) rotate(-12deg); }
+  70%       { transform: translateY(-3px) rotate(8deg); }
+}
+
+/* Birthday first line in copy block */
+.line-bday {
+  color: var(--color-gold) !important;
+  font-size: clamp(1.8rem, 6vw, 4rem) !important;
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════
    SCRAPBOOK — Zone A (Polaroid Wall), Zone B (Filmstrip),
    Zone C (Scatter Board)
 ═══════════════════════════════════════════════════ */
@@ -1213,12 +1323,17 @@ a { color: inherit; text-decoration: none; }
 .film-frames::-webkit-scrollbar { display: none; }
 
 .film-frame {
-  flex: 0 0 260px;
+  flex: 0 0 240px;
   scroll-snap-align: start;
-  border: 3px solid #333;
-  overflow: hidden;
-  background: #111;
+  background: #fefefe;
+  padding: 7px 7px 34px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
   position: relative;
+  overflow: visible;
+}
+
+.film-frame .photo-slot {
+  overflow: hidden;
 }
 
 .film-frame .photo-slot img {
@@ -1231,6 +1346,19 @@ a { color: inherit; text-decoration: none; }
 
 .film-frame:hover .photo-slot img {
   transform: scale(1.05);
+}
+
+.film-frame .polaroid-caption {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #333;
+  margin: 0;
 }
 
 /* ── ZONE C · SCATTER BOARD ── */

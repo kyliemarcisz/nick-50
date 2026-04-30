@@ -37,8 +37,30 @@
       <p class="hero-sub reveal" data-delay="0">April 2026 &nbsp;·&nbsp; A Half Century</p>
       <h1 class="hero-name reveal" data-delay="120">NICK</h1>
       <p class="hero-tagline reveal" data-delay="260">The Man. The Myth.<br>The Legend.</p>
+      <p class="hero-bday-badge reveal" data-delay="380" aria-label="Happy 50th birthday">🎉 Happy 50th Birthday</p>
+    </div>
+
+    <!-- Birthday confetti streamers -->
+    <div class="hero-streamers" aria-hidden="true">
+      <span class="streamer s1"></span>
+      <span class="streamer s2"></span>
+      <span class="streamer s3"></span>
+      <span class="streamer s4"></span>
+      <span class="streamer s5"></span>
+      <span class="streamer s6"></span>
+      <span class="streamer s7"></span>
+      <span class="streamer s8"></span>
     </div>
   </section>
+
+  <!-- ── BIRTHDAY BANNER ── -->
+  <div class="bday-banner" aria-label="Happy 50th birthday Nick">
+    <span class="bday-confetti" aria-hidden="true">🎂</span>
+    <span class="bday-text">HAPPY 50TH BIRTHDAY</span>
+    <span class="bday-num-big" aria-hidden="true">50</span>
+    <span class="bday-text">NICK CARRARA</span>
+    <span class="bday-confetti" aria-hidden="true">🎉</span>
+  </div>
 
   <!-- ── MARQUEE ── -->
   <!-- Pure CSS infinite loop. Two identical spans so translateX(-50%) = one span width. -->
@@ -119,50 +141,56 @@
             <div class="photo-slot" data-label="photo 06">
               <img src="images/p06.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">chapter one</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 07">
               <img src="images/p07.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">on the road</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 08">
               <img src="images/p08.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">the journey</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 09">
               <img src="images/p09.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">moment in time</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 10">
               <img src="images/p10.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">nick's world</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 11">
               <img src="images/p11.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">the chronicles</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 12">
               <img src="images/p12.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">fifty years</p>
           </div>
           <div class="film-frame" role="listitem">
             <div class="photo-slot" data-label="photo 13">
               <img src="images/p13.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:3/2">
             </div>
+            <p class="polaroid-caption">still counting</p>
           </div>
 
         </div>
       </div>
     </div>
 
-    <!-- ── ZONE C · SCATTER BOARD — photos 14–30
-         CSS column masonry. Mix portrait (4:5) and landscape (4:3).
-         .is-polaroid items get a white frame + handwritten caption. ── -->
+    <!-- ── ZONE C · SCATTER BOARD — photos 14–30 ── -->
     <div class="scatter-board reveal" data-delay="0" aria-label="Photo scatter board">
 
       <div class="scatter-item is-polaroid">
@@ -173,30 +201,36 @@
         <p class="polaroid-caption">backyard vibes</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 15">
           <img src="images/p15.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">classic nick</p>
       </div>
 
       <div class="scatter-item is-polaroid">
-        <span class="tape tape-angled" aria-hidden="true"></span>
+        <span class="tape" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 16">
           <img src="images/p16.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
         </div>
         <p class="polaroid-caption">always winning</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 17">
           <img src="images/p17.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">squad goals</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 18">
           <img src="images/p18.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
         </div>
+        <p class="polaroid-caption">the real deal</p>
       </div>
 
       <div class="scatter-item is-polaroid">
@@ -207,10 +241,12 @@
         <p class="polaroid-caption">crossfit nick</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 20">
           <img src="images/p20.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">game face</p>
       </div>
 
       <div class="scatter-item is-polaroid">
@@ -221,16 +257,20 @@
         <p class="polaroid-caption">family first</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 22">
           <img src="images/p22.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">living large</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 23">
           <img src="images/p23.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
         </div>
+        <p class="polaroid-caption">in his element</p>
       </div>
 
       <div class="scatter-item is-polaroid">
@@ -241,10 +281,12 @@
         <p class="polaroid-caption">just like that</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 25">
           <img src="images/p25.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">main character</p>
       </div>
 
       <div class="scatter-item is-polaroid">
@@ -255,16 +297,20 @@
         <p class="polaroid-caption">still got it</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 27">
           <img src="images/p27.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">the goat</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 28">
           <img src="images/p28.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/5">
         </div>
+        <p class="polaroid-caption">adventure mode</p>
       </div>
 
       <div class="scatter-item is-polaroid">
@@ -275,10 +321,12 @@
         <p class="polaroid-caption">the real boss</p>
       </div>
 
-      <div class="scatter-item">
+      <div class="scatter-item is-polaroid">
+        <span class="tape tape-angled" aria-hidden="true"></span>
         <div class="photo-slot" data-label="photo 30">
           <img src="images/p30.jpg" alt="Nick" loading="lazy" decoding="async" style="aspect-ratio:4/3">
         </div>
+        <p class="polaroid-caption">fifty &amp; free</p>
       </div>
 
     </div>
@@ -287,7 +335,8 @@
 
   <!-- ── COPY BLOCK ── -->
   <section class="copy-block" aria-label="Tribute to Nick">
-    <p class="line reveal" data-delay="0">Father.</p>
+    <p class="line line-bday reveal" data-delay="0">Happy Birthday.</p>
+    <p class="line reveal" data-delay="80">Father.</p>
     <p class="line line-gold reveal" data-delay="80">Innovator.</p>
     <p class="line reveal" data-delay="160">Athlete.</p>
     <p class="line line-gold reveal" data-delay="240">Legend.</p>
