@@ -1492,8 +1492,8 @@ a { color: inherit; text-decoration: none; }
 /* ── Hero ── */
 [data-theme="portugal"] .pt-hero {
   background:
-    radial-gradient(ellipse at 70% 30%, rgba(212,131,28,0.25) 0%, transparent 60%),
-    linear-gradient(155deg, var(--pt-orange) 0%, #D4831C 38%, #F9F1E2 68%);
+    linear-gradient(155deg, rgba(193,98,47,0.72) 0%, rgba(212,131,28,0.45) 45%, rgba(0,0,0,0.15) 100%),
+    url('https://images.unsplash.com/photo-1628413283166-a7666966d26b?auto=format&fit=crop&w=1600&q=80') center / cover no-repeat;
   min-height: 92svh;
   position: relative;
   overflow: hidden;
@@ -1524,14 +1524,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 [data-theme="portugal"] .pt-hero-title {
-  font-family: var(--font-quote);
-  font-size: clamp(4.5rem, 20vw, 14rem);
-  font-style: italic;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(80px, 20vw, 200px);
+  font-style: normal;
+  font-weight: 400;
   color: var(--pt-cream);
-  text-shadow: 3px 5px 0 rgba(0,0,0,0.12);
-  line-height: 0.88;
-  letter-spacing: -0.02em;
+  text-shadow: 2px 4px 20px rgba(0,0,0,0.3);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
 }
 
 [data-theme="portugal"] .pt-hero-sub {
